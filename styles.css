@@ -25,7 +25,20 @@ body{
   z-index: -1;
 }
 
+.venus {
+  background-color: #ffff66;
+  width: 21px;
+  height: 21px;
+  z-index: -1;
+}
 
+.earth {
+  background-color: #0052cc;
+  box-shadow: 0 0 75px rgb(87, 137, 167);
+  width: 23px;
+  height: 23px;
+  z-index: -1;
+}
 
 
 
