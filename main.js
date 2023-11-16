@@ -24,12 +24,30 @@ sun.style.left = `${sunX}px`;
 sun.style.top = `${sunY}px`;
 
 const mercury = {
-  speed: 0.005,
-  theta: 0,
+  speed: 0.013,
+  theta: randomNumber(0, Math.PI),
   radius: 133,
   A: 1.75, //width of elipse
-  B: .69, // height of elipse
+  B: .29, // height of elipse
   el: document.querySelector('.mercury'),
+}
+
+const venus = {
+  speed: 0.0115,
+  theta: randomNumber(0, Math.PI),
+  radius: 143,
+  A: 2.13, //width of elipse
+  B: .39, // height of elipse
+  el: document.querySelector('.venus'),
+}
+
+const earth = {
+  speed: 0.0115,
+  theta: randomNumber(0, Math.PI),
+  radius: 153,
+  A: 2.33, //width of elipse
+  B: .41, // height of elipse
+  el: document.querySelector('.earth'),
 }
 
 function update(planet) {
@@ -53,4 +71,6 @@ function update(planet) {
 
 setInterval(() => {
   update(mercury);
+  update(venus);
+  update(earth);
 }, 10);
