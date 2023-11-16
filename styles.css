@@ -3,6 +3,56 @@ body{
   color: white;
 }
 
+.sun{
+  z-index: 0;
+  box-shadow: 0 0 75px rgba(255, 141, 0, 1);
+  border-radius: 50%;
+  background: red;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.planet{
+  position: absolute;
+  border-radius: 50%;
+}
+
+.mercury {
+  background-color: #ff9933;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes zoom {
   0%{
       transform: scale(1);
@@ -11,6 +61,7 @@ body{
       transform: scale(.25);
   }
 }
+
 
 .stars{
   position: fixed;
