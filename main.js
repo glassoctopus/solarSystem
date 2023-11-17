@@ -45,16 +45,16 @@ const sunHeight = 200;
 const sunCenterX = sunX + sunWidth / 2;
 const sunCenterY = sunY + sunHeight / 2;
 
-console.log(`Sun Center X: ${sunCenterX}px`);
-console.log(`Sun Center Y: ${sunCenterY}px`);
+// console.log(`Sun Center X: ${sunCenterX}px`); //center of the sun in pixels for the orbit rotation. 
+// console.log(`Sun Center Y: ${sunCenterY}px`);
 
 const mercury = {
   speed: 0.013,
   theta: randomNumber(0, Math.PI),
   radius: 133,
   zIndex: 1,
-  A: 1.75, //width of elipse ¯\_(ツ)_/¯
-  B: .29, // height of elipse
+  A: 2.05, //width of elipse ¯\_(ツ)_/¯
+  B: .39, // height of elipse
   element: document.querySelector('.mercury'),
 }
 
@@ -64,7 +64,7 @@ const venus = {
   radius: 143,
   zIndex: 2,
   A: 2.13, //width of elipse ¯\_(ツ)_/¯
-  B: .30, // height of elipse
+  B: .40, // height of elipse
   element: document.querySelector('.venus'),
 }
 
@@ -74,7 +74,7 @@ const earth = {
   radius: 153,
   zIndex: 3,
   A: 2.33, //width of elipse ¯\_(ツ)_/¯
-  B: .31, // height of elipse
+  B: .41, // height of elipse
   element: document.querySelector('.earth'),
 }
 
@@ -84,7 +84,7 @@ const mars = {
   radius: 169,
   zIndex: 4,
   A: 2.43, //width of elipse ish ¯\_(ツ)_/¯
-  B: .32, // height of elipse
+  B: .42, // height of elipse
   element: document.querySelector('.mars'),
 }
 
@@ -94,7 +94,7 @@ const jupiter = {
   radius: 179,
   zIndex: 5,
   A: 2.53, //width of elipse ish ¯\_(ツ)_/¯
-  B: .33, // height of elipse
+  B: .43, // height of elipse
   element: document.querySelector('.jupiter'),
 }
 
@@ -104,7 +104,7 @@ const saturn = {
   radius: 189,
   zIndex: 6,
   A: 2.63, //width of elipse ish ¯\_(ツ)_/¯
-  B: .33, // height of elipse
+  B: .43, // height of elipse
   element: document.querySelector('.saturn'),
 }
 
@@ -114,7 +114,7 @@ const uranus = {
   radius: 199,
   zIndex: 7,
   A: 2.73, //width of elipse
-  B: .33, // height of elipse
+  B: .44, // height of elipse
   element: document.querySelector('.uranus'),
 }
 
@@ -124,7 +124,7 @@ const neptune = {
   radius: 209,
   zIndex: 8,
   A: 2.83, //width of elipse
-  B: .33, // height of elipse
+  B: .45, // height of elipse
   element: document.querySelector('.neptune'),
 }
 
@@ -134,7 +134,7 @@ const pluto = {
   radius: 219,
   zIndex: 9,
   A: 2.93, //width of elipse
-  B: .33, // height of elipse
+  B: .46, // height of elipse
   element: document.querySelector('.pluto'),
 }
 
