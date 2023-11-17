@@ -10,16 +10,25 @@ function randomNumber(min, max) {
 
 
 const STAR_COUNT = 500;
-let starString = "";
+const starField = document.querySelector('.stars');
 
 for (let i = 0; i < STAR_COUNT; i++) {
-  starString += `${randomNumber(-500, 500)}vw ${randomNumber(-500, 500)}vh ${randomNumber(0, 3)}px ${randomNumber(0, 3)}px #fff,`;
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = `${Math.random() * 100}vw`;
+  star.style.top = `${Math.random() * 100}vh`;
+
+  // Set random size between 1 and 3 pixels
+  const starSize = Math.floor(Math.random() * 3) + 1;
+  star.style.width = `${starSize}px`;
+  star.style.height = `${starSize}px`;
+
+  // Set random box shadow with adjusted values for roundness
+  const boxShadow = `${Math.random() * 2 - 1}px ${Math.random() * 2 - 1}px 2px #fff`;
+  star.style.boxShadow = boxShadow;
+
+  starField.appendChild(star);
 }
-
-starString = starString.slice(0, -1);
-
-const starField = document.querySelector('.stars');
-starField.style.boxShadow = starString;
 
 //orbit logic
 
@@ -29,6 +38,15 @@ const sunY = window.innerHeight / 2 - 100;
 const sun = document.querySelector('.sun');
 sun.style.left = `${sunX}px`;
 sun.style.top = `${sunY}px`;
+
+const sunWidth = 200;
+const sunHeight = 200;
+
+const sunCenterX = sunX + sunWidth / 2;
+const sunCenterY = sunY + sunHeight / 2;
+
+console.log(`Sun Center X: ${sunCenterX}px`);
+console.log(`Sun Center Y: ${sunCenterY}px`);
 
 const mercury = {
   speed: 0.013,
@@ -123,20 +141,13 @@ const pluto = {
 function update(planet) {
   planet.theta += planet.speed;
   planet.element.style.left = `${planet.A * Math.cos(planet.theta) * planet.radius + sunX + 100}px`;
-  // console.log("left = ", planet.el.style.left);
-  // console.log("offset X = ", planet.radius + sunX + 100);
-  // console.log("difference X = ",(planet.radius + sunX + 100) - (planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100));
   planet.element.style.top = `${planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100}px`;
-  // console.log(planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100 > 420);
-  if((planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100) > 420){
+
+  if((planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100) > 423){
     planet.element.style.zIndex = planet.zIndex;
   }else{
     planet.element.style.zIndex = -1 * planet.zIndex;
   }
-  // console.log("top = ", planet.el.style.top);
-  // console.log("offset Y = ", planet.radius + sunY + 100);
-  // console.log("difference Y = ", (planet.radius + sunY + 100) - (planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100));
-  
 }
 
 setInterval(() => {

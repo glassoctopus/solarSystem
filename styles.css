@@ -5,12 +5,28 @@ body{
 
 .sun{
   z-index: 0;
-  box-shadow: 0 0 75px rgba(255, 141, 0, 1);
+  box-shadow: 0 0 100px rgba(255, 141, 0, 1);
   border-radius: 50%;
   background: red;
   width: 200px;
   height: 200px;
   position: absolute;
+}
+
+.stars {
+  z-index: -100;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .planet{
@@ -34,7 +50,7 @@ body{
 
 .earth {
   background-color: #0052cc;
-  box-shadow: 0 0 75px rgb(87, 137, 167);
+  box-shadow: 0 0 5px 5px rgb(86, 134, 179);
   width: 23px;
   height: 23px;
   z-index: -1;
@@ -82,23 +98,6 @@ body{
   z-index: -1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @keyframes zoom {
   0%{
       transform: scale(1);
@@ -106,18 +105,4 @@ body{
   100%{
       transform: scale(.25);
   }
-}
-
-
-.stars{
-  position: fixed;
-  scale: .2;
-  top: 50%;
-  left: 50%;
-  height: 10px;
-  width: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation-name: zoom; 
-  box-shadow: -493vw -9vh 1px 3px #fff;
 }
