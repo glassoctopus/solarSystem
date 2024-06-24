@@ -1,6 +1,6 @@
 console.log("Solar System Practice");
 
-// to get a bunch of podtions and sizes randomly for the CSS shadow box for the star effect, this is going to be needed to turned into a componenet that can then be randomly generated on init
+// to get a bunch of postions and sizes randomly for the CSS shadow box for the star effect, this is going to be needed to turned into a componenet that can then be randomly generated on init
 const outPut = document.querySelector("#funStuff");
 
 //random postion for star generation:
@@ -140,10 +140,16 @@ const pluto = {
 
 function update(planet) {
   planet.theta += planet.speed;
-  planet.element.style.left = `${planet.A * Math.cos(planet.theta) * planet.radius + sunX + 100}px`;
-  planet.element.style.top = `${planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100}px`;
 
-  if((planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100) > 423){
+  const planetX = planet.A * Math.cos(planet.theta) * planet.radius + sunX + 100;
+  const planetY = planet.B * Math.sin(planet.theta) * planet.radius + sunY + 100;
+
+  const dynamicY = sunY + 100; 
+
+  planet.element.style.left = `${planetX}px`;
+  planet.element.style.top = `${planetY}px`;
+
+  if(planetY > dynamicY){
     planet.element.style.zIndex = planet.zIndex;
   }else{
     planet.element.style.zIndex = -1 * planet.zIndex;
