@@ -3,7 +3,7 @@ console.log("Solar System Practice");
 // to get a bunch of postions and sizes randomly for the CSS shadow box for the star effect, this is going to be needed to turned into a componenet that can then be randomly generated on init
 const outPut = document.querySelector("#funStuff");
 
-//random postion for star generation:
+//random postion for planet initial placement:
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 };
